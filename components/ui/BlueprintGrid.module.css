@@ -1,0 +1,26 @@
+/* The 64px engineering grid that backs each page hero. */
+.grid {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    linear-gradient(var(--color-divider) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-divider) 1px, transparent 1px);
+  background-size: 64px 64px;
+  opacity: 0.5;
+  -webkit-mask-image: var(--ac-grid-mask);
+  mask-image: var(--ac-grid-mask);
+}
+
+.home {
+  --ac-grid-mask: radial-gradient(120% 90% at 70% 20%, #000 0%, transparent 72%);
+}
+.services {
+  --ac-grid-mask: radial-gradient(110% 90% at 20% 10%, #000, transparent 70%);
+}
+.plans {
+  --ac-grid-mask: radial-gradient(100% 80% at 50% 0%, #000, transparent 72%);
+}
+.contact {
+  --ac-grid-mask: radial-gradient(100% 80% at 30% 0%, #000, transparent 72%);
+}

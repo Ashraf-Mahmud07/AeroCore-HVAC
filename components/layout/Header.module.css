@@ -1,0 +1,132 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 200;
+  border-bottom: 1px solid transparent;
+  background: transparent;
+  transition:
+    background 0.3s,
+    box-shadow 0.3s,
+    border-color 0.3s;
+}
+
+/* State applied past 36px of scroll — ported from initScrollHeader(). */
+.scrolled {
+  background: color-mix(in srgb, var(--color-bg) 90%, transparent);
+  -webkit-backdrop-filter: saturate(150%) blur(12px);
+  backdrop-filter: saturate(150%) blur(12px);
+  border-bottom-color: var(--color-divider);
+  box-shadow: var(--shadow-sm);
+}
+
+/* — announcement bar — */
+.topBar {
+  background: var(--color-accent-900);
+  color: var(--color-bg);
+  font-size: 13px;
+}
+.topBarInner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 8px clamp(16px, 4vw, 48px);
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+.topPhone {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--color-bg);
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+.topEmergency {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--color-accent-300);
+}
+.topBarRight {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  color: color-mix(in srgb, var(--color-bg) 78%, transparent);
+}
+.topMeta {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+.topEmail {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: inherit;
+  text-decoration: none;
+}
+.topSocial {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--color-bg);
+}
+.topSocial a {
+  color: inherit;
+  display: inline-flex;
+}
+
+/* — primary navigation row — */
+.nav {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 14px clamp(16px, 4vw, 48px);
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.desktopNav {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+.navLink {
+  color: inherit;
+  text-decoration: none;
+  font-size: 14.5px;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+.navLink:hover {
+  color: var(--color-accent);
+}
+.navLinkActive {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+.hamburger {
+  display: none;
+}
+
+@media (max-width: 1040px) {
+  .desktopNav {
+    display: none;
+  }
+  .hamburger {
+    display: inline-flex;
+  }
+}
+@media (max-width: 820px) {
+  .topBarRight {
+    display: none;
+  }
+  /* Below 820px the sticky bottom bar carries the identical Call / Book pair,
+     so the header row drops them rather than overflowing the viewport. */
+  .navCta {
+    display: none;
+  }
+}

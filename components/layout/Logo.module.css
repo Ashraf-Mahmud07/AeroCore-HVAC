@@ -1,0 +1,65 @@
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  text-decoration: none;
+  color: var(--color-text);
+  margin-right: auto;
+}
+
+.mark {
+  position: relative;
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--color-accent);
+  display: grid;
+  place-items: center;
+  color: var(--color-accent-700);
+  flex: none;
+}
+
+/* Registration ticks on the brand mark. */
+.tickTl,
+.tickBr {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+}
+.tickTl {
+  top: -4px;
+  left: -4px;
+  border-top: 1px solid var(--color-accent);
+  border-left: 1px solid var(--color-accent);
+}
+.tickBr {
+  bottom: -4px;
+  right: -4px;
+  border-bottom: 1px solid var(--color-accent);
+  border-right: 1px solid var(--color-accent);
+}
+
+.wordmark {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 21px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+/* Footer / mobile-overlay treatment: accent-300 on the dark panel, 22px word. */
+.onDark .mark {
+  border-color: var(--color-accent-300);
+  color: var(--color-accent-300);
+}
+.onDark .tickTl {
+  border-top-color: var(--color-accent-300);
+  border-left-color: var(--color-accent-300);
+}
+.onDark .tickBr {
+  border-bottom-color: var(--color-accent-300);
+  border-right-color: var(--color-accent-300);
+}
+.onDark .wordmark {
+  font-size: 22px;
+}

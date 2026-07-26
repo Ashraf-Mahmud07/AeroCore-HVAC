@@ -1,0 +1,111 @@
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 44px;
+}
+.headCopy {
+  max-width: 640px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: clamp(16px, 2vw, 26px);
+}
+
+/* The reveal wrapper is the grid item, so it must stretch and pass the row
+   height through to the card. */
+.cardWrap {
+  display: flex;
+}
+
+.card {
+  position: relative;
+  text-decoration: none;
+  color: var(--color-text);
+  padding: 26px 24px 24px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 238px;
+  transition:
+    transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1),
+    background 0.35s;
+}
+.card:hover {
+  background: color-mix(in srgb, var(--color-accent) 5%, transparent);
+  transform: translateY(-4px);
+}
+
+.badge {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.iconBox {
+  width: 46px;
+  height: 46px;
+  border: 1px solid var(--color-accent);
+  display: grid;
+  place-items: center;
+  color: var(--color-accent-700);
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 24px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  margin: 22px 0 8px;
+}
+
+.body {
+  font-size: 14.5px;
+  line-height: 1.55;
+  margin: 0;
+  color: color-mix(in srgb, var(--color-text) 78%, transparent);
+  flex: 1;
+}
+
+.linkRow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 18px;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--color-accent-700);
+  transition: gap 0.3s;
+}
+.card:hover .linkRow {
+  gap: 14px;
+}
+
+.also {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 26px;
+  align-items: center;
+}
+.alsoLabel {
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--color-text) 55%, transparent);
+  margin-right: 6px;
+}
+.alsoTag {
+  letter-spacing: 0.03em;
+}

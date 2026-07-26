@@ -1,0 +1,59 @@
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  background: var(--color-accent-900);
+  color: var(--color-bg);
+  padding: 22px clamp(16px, 5vw, 48px);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 36px;
+}
+
+.wordmark {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 22px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.close {
+  border-color: color-mix(in srgb, var(--color-bg) 40%, transparent);
+  color: var(--color-bg);
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 2px;
+  border-bottom: 1px solid color-mix(in srgb, var(--color-bg) 18%, transparent);
+  color: var(--color-bg);
+  text-decoration: none;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 26px;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+}
+.link svg {
+  color: var(--color-accent-300);
+}
+
+.actions {
+  margin-top: auto;
+  display: flex;
+  gap: 12px;
+  padding-top: 24px;
+}
+.actions > * {
+  margin-top: 0;
+}

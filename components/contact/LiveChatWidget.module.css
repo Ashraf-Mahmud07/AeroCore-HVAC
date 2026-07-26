@@ -1,0 +1,80 @@
+.launcher {
+  position: fixed;
+  right: 20px;
+  bottom: 84px;
+  z-index: 160;
+  width: 56px;
+  height: 56px;
+  border: 1px solid var(--color-accent);
+  background: var(--color-accent-700);
+  color: var(--color-bg);
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
+  padding: 0;
+}
+.launcher:hover {
+  background: var(--color-accent-800);
+}
+
+.panel {
+  position: fixed;
+  right: 20px;
+  bottom: 150px;
+  z-index: 161;
+  width: min(320px, calc(100vw - 40px));
+}
+.inner {
+  background: var(--color-bg);
+  border: 1px solid var(--color-divider);
+}
+
+.head {
+  background: var(--color-accent-900);
+  color: var(--color-bg);
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.pulse {
+  width: 9px;
+  height: 9px;
+  background: var(--color-accent-300);
+  border-radius: 50%;
+  animation: ac-pulse 1.6s infinite;
+  flex: none;
+}
+.headTitle {
+  font-family: var(--font-heading);
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 15px;
+  margin: 0;
+}
+.close {
+  margin-left: auto;
+  background: none;
+  border: 0;
+  color: var(--color-bg);
+  cursor: pointer;
+  display: inline-flex;
+  padding: 0;
+}
+
+.body {
+  padding: 16px;
+}
+.message {
+  font-size: 13.5px;
+  line-height: 1.5;
+  background: var(--color-surface);
+  padding: 12px 14px;
+  border: 1px solid var(--color-divider);
+  margin-bottom: 12px;
+}
+.composer {
+  display: flex;
+  gap: 8px;
+}

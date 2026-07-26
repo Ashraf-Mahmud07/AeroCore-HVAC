@@ -1,0 +1,8 @@
+.next
+node_modules
+public
+*.dc.html
+support.js
+image-slot.js
+_ds
+screens

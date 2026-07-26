@@ -1,0 +1,59 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.item {
+  position: relative;
+  background: var(--color-bg);
+}
+
+/* The heading only exists to give the trigger a place in the outline. */
+.itemHeading {
+  margin: 0;
+  font: inherit;
+  letter-spacing: normal;
+}
+
+.trigger {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  padding: 20px 22px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  color: var(--color-text);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: var(--ac-faq-size, 19px);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+.question {
+  flex: 1;
+}
+.marker {
+  width: 34px;
+  height: 34px;
+  flex: none;
+  border: 1px solid var(--color-divider);
+  display: grid;
+  place-items: center;
+  color: var(--color-accent-700);
+  transition: transform 0.3s;
+}
+.markerOpen {
+  transform: rotate(45deg);
+}
+
+.answer {
+  padding: 0 22px 22px;
+  font-size: 15px;
+  line-height: 1.65;
+  color: color-mix(in srgb, var(--color-text) 80%, transparent);
+  max-width: 64ch;
+}

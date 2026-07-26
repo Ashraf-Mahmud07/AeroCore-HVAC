@@ -1,0 +1,51 @@
+.success {
+  text-align: center;
+}
+.sm {
+  padding: 40px 0;
+}
+.lg {
+  padding: 60px 0;
+}
+
+.mark {
+  border: 1px solid var(--color-accent);
+  display: inline-grid;
+  place-items: center;
+  color: var(--color-accent-700);
+}
+.sm .mark {
+  width: 56px;
+  height: 56px;
+}
+.lg .mark {
+  width: 64px;
+  height: 64px;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.sm .title {
+  font-size: 26px;
+  margin: 18px 0 6px;
+}
+.lg .title {
+  font-size: 30px;
+  margin: 20px 0 8px;
+}
+
+.body {
+  color: color-mix(in srgb, var(--color-text) 76%, transparent);
+  margin: 0;
+}
+.sm .body {
+  font-size: 14.5px;
+}
+.lg .body {
+  font-size: 15px;
+  margin: 0 auto;
+  max-width: 38ch;
+}

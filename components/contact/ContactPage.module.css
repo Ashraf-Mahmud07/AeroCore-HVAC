@@ -1,0 +1,282 @@
+/* — hero — */
+.hero {
+  position: relative;
+  padding: clamp(140px, 16vh, 196px) 0 clamp(36px, 4vw, 56px);
+  overflow: clip;
+}
+.heroInner {
+  position: relative;
+}
+.heroKicker {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-accent-700);
+}
+.heroTitle {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: clamp(42px, 6vw, 84px);
+  line-height: 0.96;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  margin: 14px 0 0;
+  max-width: 18ch;
+}
+.heroLede {
+  font-size: 17px;
+  line-height: 1.6;
+  color: color-mix(in srgb, var(--color-text) 80%, transparent);
+  margin: 18px 0 0;
+  max-width: 56ch;
+}
+
+/* — layout — */
+.grid {
+  padding: 0 0 clamp(56px, 7vw, 96px);
+}
+.stack {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: clamp(24px, 4vw, 48px);
+  align-items: start;
+}
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* — emergency card — */
+.emergency {
+  position: relative;
+  padding: 22px 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--color-accent-900);
+  color: var(--color-bg);
+}
+.emergencyIcon {
+  width: 48px;
+  height: 48px;
+  flex: none;
+  border: 1px solid var(--color-accent-300);
+  display: grid;
+  place-items: center;
+  color: var(--color-accent-300);
+  animation: ac-pulse 2s ease-in-out infinite;
+}
+.emergencyLabel {
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-accent-300);
+}
+.emergencyPhone {
+  font-family: var(--font-heading);
+  font-size: 28px;
+  letter-spacing: 0.02em;
+  color: var(--color-bg);
+  text-decoration: none;
+}
+
+/* — info cards — */
+.infoCard {
+  position: relative;
+  padding: 20px 22px;
+  display: flex;
+  gap: 15px;
+  align-items: flex-start;
+}
+.infoIcon {
+  width: 40px;
+  height: 40px;
+  flex: none;
+  border: 1px solid var(--color-accent);
+  display: grid;
+  place-items: center;
+  color: var(--color-accent-700);
+}
+.infoLabel {
+  font-family: var(--font-heading);
+  font-size: 15px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--color-text) 60%, transparent);
+  margin-bottom: 4px;
+}
+.infoValue {
+  font-size: 15px;
+  line-height: 1.5;
+  font-style: normal;
+}
+.infoValue a {
+  color: inherit;
+  text-decoration: none;
+}
+.infoValue a:hover {
+  color: var(--color-accent);
+}
+
+/* — hours — */
+.hours {
+  position: relative;
+  padding: 20px 22px;
+}
+.hoursTitle {
+  font-family: var(--font-heading);
+  font-size: 15px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--color-text) 60%, transparent);
+  margin-bottom: 12px;
+}
+.hours dl,
+.hours dd {
+  margin: 0;
+}
+.hoursRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  padding: 5px 0;
+  gap: 12px;
+}
+.hoursTime {
+  color: color-mix(in srgb, var(--color-text) 65%, transparent);
+}
+
+/* — map — */
+.mapFrame {
+  position: relative;
+  margin: 0;
+  aspect-ratio: 4 / 3;
+  background: color-mix(in srgb, var(--color-accent) 4%, transparent);
+  overflow: hidden;
+}
+.mapGrid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(var(--color-divider) 1px, transparent 1px),
+    linear-gradient(90deg, var(--color-divider) 1px, transparent 1px);
+  background-size: 34px 34px;
+}
+.mapSvg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+.mapPin {
+  position: absolute;
+  left: 14px;
+  bottom: 14px;
+  margin-top: 0;
+  color: var(--color-text);
+  background: var(--color-bg);
+  border: 1px solid var(--color-divider);
+  padding: 8px 12px;
+  font-family: var(--font-heading);
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.mapPinIcon {
+  color: var(--color-accent-700);
+}
+
+/* — form — */
+.form {
+  position: relative;
+  padding: clamp(24px, 3.5vw, 44px);
+  background: var(--color-surface);
+}
+.formTitle {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: clamp(24px, 3vw, 34px);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin: 0 0 6px;
+}
+.formNote {
+  font-size: 14px;
+  color: color-mix(in srgb, var(--color-text) 70%, transparent);
+  margin: 0 0 24px;
+}
+.fields {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+/* A fieldset groups the radios for screen readers; strip its native chrome and
+   style the legend like the design system's field labels. */
+.timingField {
+  margin-top: 16px;
+  border: 0;
+  padding: 0;
+  margin-inline: 0;
+  min-inline-size: 0;
+}
+.timingField legend {
+  display: block;
+  padding: 0;
+  font-size: 12px;
+  margin-bottom: 5px;
+  color: color-mix(in srgb, var(--color-text) 70%, transparent);
+}
+.timingOptions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 2px;
+}
+.timingOption {
+  border: 1px solid var(--color-divider);
+  padding: 9px 14px;
+  cursor: pointer;
+}
+.messageField {
+  margin-top: 16px;
+}
+.messageInput {
+  min-height: 110px;
+}
+.optIn {
+  margin-top: 16px;
+  align-items: flex-start;
+  font-size: 13px;
+  color: color-mix(in srgb, var(--color-text) 72%, transparent);
+}
+.optInDot {
+  border-radius: 2px;
+  margin-top: 1px;
+}
+.submit {
+  margin-top: 22px;
+  padding: 15px;
+  font-size: 15px;
+}
+.disclaimer {
+  font-size: 12px;
+  color: color-mix(in srgb, var(--color-text) 55%, transparent);
+  text-align: center;
+  margin: 14px 0 0;
+}
+
+@media (max-width: 860px) {
+  .stack {
+    grid-template-columns: 1fr;
+  }
+}
+@media (max-width: 480px) {
+  .fields {
+    grid-template-columns: 1fr;
+  }
+}

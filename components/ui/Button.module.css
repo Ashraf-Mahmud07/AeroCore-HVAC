@@ -1,0 +1,32 @@
+/* Sizes taken from the inline overrides the design components apply to `.btn`. */
+.cta {
+  font-size: 15px;
+  padding: 13px 22px;
+}
+.ctaWide {
+  font-size: 15px;
+  padding: 14px 24px;
+}
+.blockRow {
+  flex: 1;
+  padding: 13px;
+  margin-top: 0;
+}
+
+/* Buttons that sit on the dark accent-900 panels. */
+.onDark {
+  color: var(--color-bg);
+  border-color: color-mix(in srgb, var(--color-bg) 40%, transparent);
+}
+.onDark:hover {
+  background: color-mix(in srgb, var(--color-bg) 10%, transparent);
+}
+
+/* Icon + label pairs in the header use a 7px gap rather than the default 6px. */
+.gap7 {
+  gap: 7px;
+}
+
+.noWrap {
+  white-space: nowrap;
+}

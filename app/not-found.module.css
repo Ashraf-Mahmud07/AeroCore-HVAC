@@ -1,0 +1,36 @@
+.main {
+  padding: clamp(160px, 20vh, 240px) 0 clamp(72px, 9vw, 128px);
+}
+
+.kicker {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-accent-700);
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: clamp(38px, 5.6vw, 72px);
+  line-height: 0.98;
+  letter-spacing: 0.01em;
+  text-transform: uppercase;
+  margin: 16px 0 0;
+}
+
+.body {
+  font-size: 17px;
+  line-height: 1.6;
+  max-width: 52ch;
+  margin: 20px 0 0;
+  color: color-mix(in srgb, var(--color-text) 80%, transparent);
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 32px;
+}

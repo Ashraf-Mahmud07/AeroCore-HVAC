@@ -1,0 +1,20 @@
+.bar {
+  display: none;
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 150;
+  padding: 10px;
+  gap: 10px;
+  background: color-mix(in srgb, var(--color-bg) 92%, transparent);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid var(--color-divider);
+}
+
+@media (max-width: 820px) {
+  .bar {
+    display: flex;
+  }
+}

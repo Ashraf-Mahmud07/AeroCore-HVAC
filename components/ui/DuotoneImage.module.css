@@ -1,0 +1,16 @@
+/* `.duotone` (design system) supplies the accent colour-blend overlay; these
+   rules only position the frame the image fills. */
+.fill {
+  position: absolute;
+  inset: 0;
+}
+
+.ratio {
+  position: relative;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}

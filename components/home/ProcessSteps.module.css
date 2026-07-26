@@ -1,0 +1,61 @@
+.head {
+  text-align: center;
+  max-width: 640px;
+  margin: 0 auto 52px;
+}
+
+.grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.stepWrap {
+  display: flex;
+}
+.step {
+  position: relative;
+  padding: 26px 22px;
+  background: var(--color-bg);
+  flex: 1;
+}
+
+.stepTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.stepNo {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 44px;
+  line-height: 0.8;
+  color: var(--color-accent-300);
+}
+.stepIcon {
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--color-accent);
+  display: grid;
+  place-items: center;
+  color: var(--color-accent-700);
+}
+
+.stepTitle {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 22px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin: 22px 0 7px;
+}
+.stepBody {
+  font-size: 13.5px;
+  line-height: 1.5;
+  margin: 0;
+  color: color-mix(in srgb, var(--color-text) 76%, transparent);
+}
