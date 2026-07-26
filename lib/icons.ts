@@ -36,12 +36,10 @@ import {
   Smile,
   Star,
   ThermometerSun,
-  TrendingDown,
   Users,
   Wind,
   Wrench,
   X,
-  Zap,
 } from 'lucide-react';
 import type { IconName, IconRegistry } from '@/types';
 
@@ -87,12 +85,10 @@ export const icons: IconRegistry = {
   smile: Smile,
   star: Star,
   'thermometer-sun': ThermometerSun,
-  'trending-down': TrendingDown,
   users: Users,
   wind: Wind,
   wrench: Wrench,
   x: X,
-  zap: Zap,
 };
 
 export function getIcon(name: IconName) {

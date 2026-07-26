@@ -17,7 +17,7 @@ export function ContactCta() {
           <Reveal>
             <SectionHeading
               id="contact-heading"
-              kicker="12 — Get in touch"
+              kicker="11 — Get in touch"
               title="Book a visit in under a minute."
             />
             <p className={styles.lede}>

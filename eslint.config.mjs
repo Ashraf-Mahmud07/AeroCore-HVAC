@@ -9,17 +9,7 @@ const compat = new FlatCompat({ baseDirectory: __dirname });
 
 const eslintConfig = [
   {
-    // The `.dc.html` design components and their runtime are the design source
-    // of truth, not application code — they are read, never built.
-    ignores: [
-      '.next/**',
-      'node_modules/**',
-      'next-env.d.ts',
-      'scripts/**',
-      '_ds/**',
-      'support.js',
-      'image-slot.js',
-    ],
+    ignores: ['.next/**', 'node_modules/**', 'next-env.d.ts', 'scripts/**'],
   },
   ...compat.extends('next/core-web-vitals', 'next/typescript', 'prettier'),
   {

@@ -8,12 +8,12 @@ import styles from './HomeFaq.module.css';
 
 export function HomeFaq() {
   return (
-    <Section id="faq" tone="surface" border="both" ariaLabelledBy="faq-heading">
+    <Section id="faq" tone="surface" bordered ariaLabelledBy="faq-heading">
       <Container width={900}>
         <Reveal className={styles.head}>
           <SectionHeading
             id="faq-heading"
-            kicker="11 — Questions"
+            kicker="10 — Questions"
             title="Answers, up front."
             align="center"
             rule="short"

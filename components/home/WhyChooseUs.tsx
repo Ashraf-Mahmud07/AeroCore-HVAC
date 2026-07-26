@@ -13,7 +13,7 @@ import styles from './WhyChooseUs.module.css';
 
 export function WhyChooseUs() {
   return (
-    <Section id="about" tone="surface" border="both" ariaLabelledBy="about-heading">
+    <Section id="about" tone="surface" bordered ariaLabelledBy="about-heading">
       <Container>
         <div className={styles.stack}>
           <Reveal>

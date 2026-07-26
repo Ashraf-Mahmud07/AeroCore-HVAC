@@ -1,13 +1,14 @@
 # AeroCore HVAC
 
-A production Next.js 15 marketing site for AeroCore HVAC, rebuilt from the four
-`.dc.html` design components in this repository.
+A production Next.js 15 marketing site for AeroCore HVAC, rebuilt from a set of
+`.dc.html` design components and the `industry` design system that accompanied
+them.
 
-The design components and `_ds/industry-*/styles.css` are the **single source of
-truth** for layout, spacing, typography, colour, animation, interaction and copy.
-Nothing here was redesigned; the proprietary Design Component runtime
+Those source files were the reference for layout, spacing, typography, colour,
+animation, interaction and copy. The proprietary Design Component runtime
 (`<x-dc>`, `sc-for`, `sc-if`, `DCLogic`) was dropped and everything it expressed
-was rebuilt in React.
+was rebuilt in React. The design sources have since been removed from the repo;
+`styles/tokens.css` is the surviving verbatim copy of the design system.
 
 ---
 
@@ -35,17 +36,16 @@ npm run dev          # http://localhost:3000
 
 ### Scripts
 
-| Script                        | What it does                                          |
-| ----------------------------- | ----------------------------------------------------- |
-| `npm run dev`                 | Development server                                    |
-| `npm run build`               | Production build                                      |
-| `npm start`                   | Serve the production build                            |
-| `npm run lint`                | ESLint                                                |
-| `npm run typecheck`           | `tsc --noEmit`                                        |
-| `npm run format`              | Prettier write                                        |
-| `npm run format:check`        | Prettier check                                        |
-| `npm run images:fetch`        | Re-download the stand-in photography (see _Images_)   |
-| `npm run images:placeholders` | Regenerate icons, PWA screenshots, testimonial plates |
+| Script                 | What it does                                        |
+| ---------------------- | --------------------------------------------------- |
+| `npm run dev`          | Development server                                  |
+| `npm run build`        | Production build                                    |
+| `npm start`            | Serve the production build                          |
+| `npm run lint`         | ESLint                                              |
+| `npm run typecheck`    | `tsc --noEmit`                                      |
+| `npm run format`       | Prettier write                                      |
+| `npm run format:check` | Prettier check                                      |
+| `npm run images:fetch` | Re-download the stand-in photography (see _Images_) |
 
 `npm install`, `npm run dev` and `npm run build` all complete with no warnings
 or errors.
@@ -65,6 +65,17 @@ per environment so preview deploys do not advertise production canonicals.
 
 ---
 
+## Routes
+
+| Path        | Page                                  |
+| ----------- | ------------------------------------- |
+| `/`         | Home                                  |
+| `/services` | Service catalog, method band, CTA     |
+| `/contact`  | Contact details + booking form + chat |
+| _(404)_     | `app/not-found.tsx`                   |
+
+---
+
 ## Folder structure
 
 ```
@@ -74,7 +85,6 @@ app/
     layout.tsx                Header + Footer + sticky mobile bar + skip link
     page.tsx                  Home
     services/page.tsx
-    maintenance-plans/page.tsx
     contact/page.tsx
   not-found.tsx               404
   sitemap.ts  robots.ts  manifest.ts
@@ -84,13 +94,12 @@ components/
   layout/     Header, MobileNav, Footer, Logo, SkipLink, StickyMobileBar
   home/       Hero (3 variants), ServicesGrid, WhyChooseUs, ProcessSteps,
               Projects + ProjectGallery + BeforeAfterSlider, Testimonials,
-              PlansTeaser, Financing, ServiceAreas + ZipChecker, Blog +
-              Newsletter, HomeFaq, ContactCta + QuickRequestForm
+              Financing, ServiceAreas + ZipChecker, Blog + Newsletter,
+              HomeFaq, ContactCta + QuickRequestForm
   services/   ServicesHero, ServiceCatalog, MethodBand
-  maintenance/PlansHero, PricingGrid, ComparisonTable, PerksGrid, PlanFaq
   contact/    ContactHero, ContactInfo, ServiceRequestForm, LiveChatWidget
-  shared/     BrandMarquee, PricingCard, FaqAccordion, CtaBand, Breadcrumb,
-              Field, FormSuccess, JsonLd
+  shared/     BrandMarquee, FaqAccordion, CtaBand, Breadcrumb, Field,
+              FormSuccess, JsonLd
   ui/         Button, Container, Section, SectionHeading, BlueprintGrid,
               Corners, Counter, DuotoneImage, Icon, Reveal, StarRating
 
@@ -99,18 +108,18 @@ hooks/        useInView, useCountUp, useScrolled, useLockBodyScroll,
 lib/          data.ts, site-config.ts, seo.ts, actions.ts, icons.ts, utils.ts
 types/        index.ts, forms.ts
 styles/       tokens.css (design system), globals.css (app-level)
-scripts/      fetch-images.mjs, generate-placeholders.mjs
+scripts/      fetch-images.mjs
 public/       images/, icons/, mask-icon.svg
 ```
 
 ### Where things live
 
-- **Content** — every headline, list, plan, FAQ, testimonial and label comes from
+- **Content** — every headline, list, FAQ, testimonial and label comes from
   `lib/data.ts`, extracted from the design components' `renderVals()`. Nothing is
   hardcoded twice.
 - **Company facts** — phone, email, address, licence, hours, coordinates, rating,
   navigation and footer links live in `lib/site-config.ts`.
-- **Design tokens** — `styles/tokens.css` is `_ds/industry-*/styles.css` ported
+- **Design tokens** — `styles/tokens.css` is the `industry` design system ported
   verbatim. The only edits: the Google Fonts `@import` is removed (replaced by
   `next/font`) and `--font-heading` / `--font-body` point at the resulting CSS
   variables. Every colour, space, radius, shadow and component class is unchanged.
@@ -190,9 +199,16 @@ as they are in use — replace them with AeroCore's own photography before launc
 or publish the credits page.
 
 **Testimonial portraits are deliberately not photographs.** `testimonial-*.png`
-are generated blueprint plates. Putting a real, identifiable person beside a
+are abstract blueprint plates. Putting a real, identifiable person beside a
 testimonial they did not give would misrepresent them, so those slots stay
 abstract until the client supplies signed-off customer portraits.
+
+### Icons
+
+`app/favicon.ico`, `app/apple-icon.png`, `public/icons/*` and the testimonial
+plates were produced by a generator script that has since been removed. The
+assets themselves are committed and need no build step; replace them by
+overwriting the files in place.
 
 ---
 
@@ -209,9 +225,8 @@ abstract until the client supplies signed-off customer portraits.
     `Organization`, `WebSite` + `SearchAction`
   - Home — `FAQPage`, plus `Review` / `AggregateRating`
   - Services — `ItemList` of `Service` nodes, `BreadcrumbList`
-  - Maintenance plans — `OfferCatalog`, `FAQPage`, `BreadcrumbList`
   - Contact — `ContactPage`, `BreadcrumbList`
-- **`app/sitemap.ts`** — all four routes with priorities and change frequencies.
+- **`app/sitemap.ts`** — all three routes with priorities and change frequencies.
 - **`app/robots.ts`** — allow all, references the sitemap.
 - **`app/manifest.ts`** — name, icons (including maskable), screenshots, theme
   colours, `display: standalone`, `start_url`.
@@ -237,7 +252,6 @@ Targeting WCAG 2.2 AA:
 - Every form control has a real `<label>`; the timing radios are grouped in a
   `<fieldset>` / `<legend>`; errors are wired via `aria-describedby` and
   `aria-invalid`
-- Comparison table uses `<th scope="col">` / `<th scope="row">` and a caption
 - Decorative icons and SVG chrome are `aria-hidden`; meaningful SVGs use
   `role="img"` with a label
 - `prefers-reduced-motion` disables animation, transitions and scroll behaviour,
@@ -255,7 +269,7 @@ Targeting WCAG 2.2 AA:
 - Fixed aspect ratios on every media frame, so CLS stays at zero
 - `optimizePackageImports` for `lucide-react` so only used icons ship
 - Route prefetching via `next/link`
-- All four routes prerender as static HTML (~103 kB shared JS)
+- All routes prerender as static HTML (~103 kB shared JS)
 - Counters and reveals animate on `requestAnimationFrame` / transform + opacity only
 
 ---
@@ -299,25 +313,26 @@ a static export (`output: 'export'`) would disable them and the image optimiser.
 
 ## Implementation notes
 
-Three places where the four design components disagreed with each other or with
-production requirements, and the call that was made:
+Judgement calls worth knowing about:
 
-1. **One header for every page.** The home component's header carries the
-   registration ticks on the logo mark and the social links in the top bar; the
-   other three omit them. A single `Header` is used everywhere and follows the
-   home version, since duplicating the chrome four ways would be worse than the
-   cosmetic difference.
+1. **One header for every page.** The home design component's header carried
+   registration ticks on the logo mark and social links in the top bar; the other
+   pages omitted them. A single `Header` is used everywhere and follows the home
+   version.
 
 2. **Header CTAs collapse below 820px.** In the original the Call / Book buttons
-   stay in the nav row at every width and overflow narrow viewports. Below 820px
-   the sticky bottom bar already carries the identical pair, so the header row
-   drops them.
+   stayed in the nav row at every width and overflowed narrow viewports. Below
+   820px the sticky bottom bar already carries the identical pair, so the header
+   row drops them.
 
-3. **Hero variants.** The home component exposes a `heroVariant` prop
+3. **Hero variants.** The home component exposed a `heroVariant` prop
    (`Split` / `Centered` / `Spec sheet`, default `Split`). All three are
    implemented and selected by `siteConfig.heroVariant`, so `heroStats` and
    `specRows` remain live data rather than dead extracts.
 
-The original `.dc.html` files, `_ds/`, `support.js` and `image-slot.js` are left
-in place as the design reference. They are excluded from linting and are not part
-of the build.
+4. **Maintenance plans removed.** The Comfort Club page, the homepage plan
+   teaser and all supporting data, types and schema were deleted on request. The
+   homepage section numbers were resequenced (`02`–`11`) so the kickers stay
+   consecutive; the "What's included in a maintenance plan?" FAQ was removed
+   along with the product it described. Maintenance remains in the services
+   catalog as a service.

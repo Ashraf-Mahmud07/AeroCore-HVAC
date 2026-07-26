@@ -9,30 +9,18 @@ interface CtaBandProps {
   readonly id: string;
   readonly title: string;
   readonly body: string;
-  readonly tone: 'surface' | 'dark';
-  /** Copy measure — 52ch on the services page, 50ch on the plans page. */
-  readonly measure?: string;
-  readonly size?: 'md' | 'sm';
   readonly children: React.ReactNode;
 }
 
-/** The closing call-to-action panel used by the services and plans pages. */
-export function CtaBand({
-  id,
-  title,
-  body,
-  tone,
-  measure = '52ch',
-  size = 'md',
-  children,
-}: CtaBandProps) {
+/** The closing call-to-action panel on the services page. */
+export function CtaBand({ id, title, body, children }: CtaBandProps) {
   return (
-    <Section size={size} ariaLabelledBy={id}>
+    <Section size="md" ariaLabelledBy={id}>
       <Container>
         <Reveal>
-          <div className={cn('blueprint', styles.band, styles[tone])}>
-            <Corners color={tone === 'dark' ? 'var(--color-accent-300)' : undefined} />
-            <div className={styles.copy} style={{ ['--ac-cta-measure' as string]: measure }}>
+          <div className={cn('blueprint', styles.band)}>
+            <Corners />
+            <div className={styles.copy}>
               <h2 id={id} className={styles.title}>
                 {title}
               </h2>

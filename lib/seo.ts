@@ -1,12 +1,5 @@
 import type { Metadata } from 'next';
-import {
-  homeFaqs,
-  planFaqs,
-  serviceCatalog,
-  serviceAreas,
-  services,
-  testimonials,
-} from '@/lib/data';
+import { homeFaqs, serviceCatalog, serviceAreas, services, testimonials } from '@/lib/data';
 import { routes, siteConfig, siteUrl } from '@/lib/site-config';
 import type { BreadcrumbItem, Faq } from '@/types';
 
@@ -270,34 +263,4 @@ export function buildContactPageSchema(): JsonLdSchema {
   };
 }
 
-/** Offer catalog for the three Comfort Club maintenance plans. */
-export function buildMaintenancePlansSchema(
-  plans: readonly { name: string; price: string; tagline: string }[],
-): JsonLdSchema {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'OfferCatalog',
-    name: 'The Comfort Club — AeroCore HVAC maintenance plans',
-    url: `${siteUrl}${routes.maintenancePlans}`,
-    itemListElement: plans.map((plan, index) => ({
-      '@type': 'Offer',
-      position: index + 1,
-      name: plan.name,
-      description: plan.tagline,
-      price: plan.price.replace('$', ''),
-      priceCurrency: 'USD',
-      priceSpecification: {
-        '@type': 'UnitPriceSpecification',
-        price: plan.price.replace('$', ''),
-        priceCurrency: 'USD',
-        billingIncrement: 1,
-        unitCode: 'MON',
-      },
-      availability: 'https://schema.org/InStock',
-      seller: { '@id': `${siteUrl}/#business` },
-    })),
-  };
-}
-
 export const homeFaqSchema = () => buildFaqSchema(homeFaqs);
-export const planFaqSchema = () => buildFaqSchema(planFaqs);

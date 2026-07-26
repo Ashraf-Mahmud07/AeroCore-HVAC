@@ -10,15 +10,12 @@ import type {
   Brand,
   BusinessHour,
   CatalogService,
-  ComparisonRow,
   Faq,
   FeaturedPost,
   FinanceBenefit,
   FinanceExample,
   InfoCard,
-  MaintenancePlan,
   MethodStep,
-  Perk,
   Post,
   ProcessStep,
   Project,
@@ -317,159 +314,6 @@ export const testimonials: readonly Testimonial[] = [
   },
 ];
 
-/* -- Maintenance plans (home teaser + plans page) ------------------------- */
-
-export const maintenancePlans: readonly MaintenancePlan[] = [
-  {
-    name: 'Essential',
-    tagline: 'Keep the warranty valid.',
-    price: '$14',
-    period: 'mo',
-    annual: 'or $149 / year',
-    popular: false,
-    cta: 'Choose Essential',
-    theme: {
-      bg: 'var(--color-bg)',
-      fg: 'var(--color-text)',
-      corner: 'color-mix(in srgb, var(--color-text) 55%, transparent)',
-      rule: 'var(--color-divider)',
-      check: 'var(--color-accent-700)',
-      btnClass: 'btn-secondary',
-    },
-    homeFeatures: [
-      '1 precision tune-up / year',
-      '15% off all repairs',
-      'Priority scheduling',
-      'No dispatch fee',
-    ],
-    features: [
-      '1 precision tune-up / year',
-      '15% off all repairs',
-      'Priority scheduling',
-      'No dispatch fee',
-      'Warranty compliance report',
-    ],
-  },
-  {
-    name: 'Comfort',
-    tagline: 'The one most homes pick.',
-    price: '$29',
-    period: 'mo',
-    annual: 'or $299 / year',
-    popular: true,
-    cta: 'Choose Comfort',
-    theme: {
-      bg: 'var(--color-accent-900)',
-      fg: 'var(--color-bg)',
-      corner: 'var(--color-accent-300)',
-      rule: 'color-mix(in srgb, var(--color-bg) 22%, transparent)',
-      check: 'var(--color-accent-300)',
-      btnClass: 'btn-primary',
-    },
-    homeFeatures: [
-      '2 tune-ups / year (heat + cool)',
-      '20% off all repairs',
-      'Same-day priority dispatch',
-      'No overtime charges, ever',
-      'Filters delivered to your door',
-    ],
-    features: [
-      '2 tune-ups / year (heat + cool)',
-      '20% off all repairs',
-      'Same-day priority dispatch',
-      'No overtime charges, ever',
-      'Filters delivered to your door',
-      'Annual efficiency report',
-    ],
-  },
-  {
-    name: 'Total Care',
-    tagline: 'Whole-home peace of mind.',
-    price: '$49',
-    period: 'mo',
-    annual: 'or $499 / year',
-    popular: false,
-    cta: 'Choose Total Care',
-    theme: {
-      bg: 'var(--color-bg)',
-      fg: 'var(--color-text)',
-      corner: 'color-mix(in srgb, var(--color-text) 55%, transparent)',
-      rule: 'var(--color-divider)',
-      check: 'var(--color-accent-700)',
-      btnClass: 'btn-secondary',
-    },
-    homeFeatures: [
-      'Everything in Comfort',
-      '25% off repairs + parts',
-      'Annual IAQ + duct inspection',
-      '1 free emergency call / year',
-      'Transferable if you sell',
-    ],
-    features: [
-      'Everything in Comfort',
-      '25% off repairs + parts',
-      'Annual IAQ + duct inspection',
-      '1 free emergency call / year',
-      'Transferable if you sell',
-      'Locked repair pricing',
-    ],
-  },
-];
-
-export const planComparison: readonly ComparisonRow[] = [
-  { feature: 'Precision tune-ups per year', essential: '1', comfort: '2', totalCare: '2' },
-  { feature: 'Repair discount', essential: '15%', comfort: '20%', totalCare: '25%' },
-  { feature: 'Priority scheduling', essential: '✓', comfort: 'Same-day', totalCare: 'Same-day' },
-  { feature: 'No dispatch fee', essential: '✓', comfort: '✓', totalCare: '✓' },
-  { feature: 'No overtime charges', essential: '—', comfort: '✓', totalCare: '✓' },
-  { feature: 'Filters delivered', essential: '—', comfort: '✓', totalCare: '✓' },
-  { feature: 'IAQ + duct inspection', essential: '—', comfort: '—', totalCare: '✓' },
-  { feature: 'Free emergency call / yr', essential: '—', comfort: '—', totalCare: '1' },
-  { feature: 'Transferable on sale', essential: '—', comfort: '—', totalCare: '✓' },
-];
-
-export const planPerks: readonly Perk[] = [
-  {
-    icon: 'trending-down',
-    title: 'Lower bills',
-    body: 'A tuned system runs up to 15% cheaper. The plan often pays for itself by spring.',
-  },
-  {
-    icon: 'shield-check',
-    title: 'Warranty kept valid',
-    body: 'Manufacturers require documented annual service. We keep the paperwork current.',
-  },
-  {
-    icon: 'zap',
-    title: 'Skip the queue',
-    body: 'Members get same-day priority dispatch, even in the summer and winter rush.',
-  },
-  {
-    icon: 'clock',
-    title: 'Fewer surprises',
-    body: 'We catch worn parts on the bench, not at 2am on the coldest night of the year.',
-  },
-];
-
-export const planFaqs: readonly Faq[] = [
-  {
-    q: 'Can I cancel anytime?',
-    a: 'Yes. Monthly plans can be cancelled at any time with no penalty. Annual plans are pro-rated if you cancel mid-term.',
-  },
-  {
-    q: 'Does the discount stack with financing?',
-    a: 'The repair discount applies to labor and parts on service calls. New-system installs are handled separately and pair with our 0% financing and rebate filing.',
-  },
-  {
-    q: 'What does a precision tune-up include?',
-    a: 'A 26-point inspection: refrigerant charge, static pressure, airflow, electrical draw, combustion safety (for gas), condensate, and a full efficiency reading — documented and emailed to you.',
-  },
-  {
-    q: 'I have two systems. How does that work?',
-    a: 'Each plan covers one system. Add additional systems for $9/mo each, and every system gets its own tune-ups and reporting.',
-  },
-];
-
 /* -- Home / financing ----------------------------------------------------- */
 
 export const financeBenefits: readonly FinanceBenefit[] = [
@@ -583,10 +427,6 @@ export const homeFaqs: readonly Faq[] = [
   {
     q: 'Do you offer financing?',
     a: 'Yes — 0% APR for up to 18 months on approved credit, plus fixed low-rate terms up to 120 months. A soft-pull pre-qualification takes about a minute and won’t affect your credit score.',
-  },
-  {
-    q: 'What’s included in a maintenance plan?',
-    a: 'Plans start at two precision tune-ups a year, priority dispatch, discounted repairs and no overtime charges. Higher tiers add air-quality inspections, filter delivery and a free annual emergency call.',
   },
 ];
 

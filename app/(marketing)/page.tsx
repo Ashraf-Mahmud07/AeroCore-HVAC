@@ -6,7 +6,6 @@ import { ContactCta } from '@/components/home/ContactCta';
 import { Financing } from '@/components/home/Financing';
 import { Hero } from '@/components/home/Hero';
 import { HomeFaq } from '@/components/home/HomeFaq';
-import { PlansTeaser } from '@/components/home/PlansTeaser';
 import { ProcessSteps } from '@/components/home/ProcessSteps';
 import { Projects } from '@/components/home/Projects';
 import { ServiceAreas } from '@/components/home/ServiceAreas';
@@ -45,7 +44,6 @@ export default function HomePage() {
       <ProcessSteps />
       <Projects />
       <Testimonials />
-      <PlansTeaser />
       <Financing />
       <ServiceAreas />
       <Blog />

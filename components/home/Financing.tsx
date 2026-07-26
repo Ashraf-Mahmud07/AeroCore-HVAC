@@ -18,7 +18,7 @@ export function Financing() {
           <Reveal>
             <SectionHeading
               id="financing-heading"
-              kicker="08 — Financing"
+              kicker="07 — Financing"
               title="A new system, on a payment you choose."
               size={50}
             />

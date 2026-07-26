@@ -88,7 +88,6 @@ export const mailHref = `mailto:${siteConfig.email}`;
 export const routes = {
   home: '/',
   services: '/services',
-  maintenancePlans: '/maintenance-plans',
   contact: '/contact',
 } as const;
 
@@ -98,7 +97,6 @@ export const mainNav: readonly NavLink[] = [
   { label: 'About', href: `${routes.home}#about` },
   { label: 'Services', href: routes.services },
   { label: 'Projects', href: `${routes.home}#projects` },
-  { label: 'Plans', href: routes.maintenancePlans },
   { label: 'Financing', href: `${routes.home}#financing` },
   { label: 'Service Areas', href: `${routes.home}#areas` },
   { label: 'Blog', href: `${routes.home}#blog` },

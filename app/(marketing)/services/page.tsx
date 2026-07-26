@@ -38,8 +38,6 @@ export default function ServicesPage() {
       <BrandMarquee caption="Factory-authorized · we service every major brand" borders="bottom" />
       <CtaBand
         id="services-cta"
-        tone="surface"
-        size="md"
         title="Not sure what you need? We'll tell you straight."
         body="Free diagnostic-grade assessment with a written, fixed-price options sheet. Repair or replace — we'll show you the math."
       >

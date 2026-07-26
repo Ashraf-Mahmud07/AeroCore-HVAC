@@ -39,12 +39,10 @@ export type IconName =
   | 'smile'
   | 'star'
   | 'thermometer-sun'
-  | 'trending-down'
   | 'users'
   | 'wind'
   | 'wrench'
-  | 'x'
-  | 'zap';
+  | 'x';
 
 export type IconRegistry = Readonly<Record<IconName, LucideIcon>>;
 
@@ -136,45 +134,6 @@ export interface Testimonial {
   readonly location: string;
   readonly system: string;
   readonly image: ImageAsset;
-}
-
-/** Colour treatment a pricing card carries in the source design. */
-export interface PlanTheme {
-  readonly bg: string;
-  readonly fg: string;
-  readonly corner: string;
-  readonly rule: string;
-  readonly check: string;
-  readonly btnClass: 'btn-primary' | 'btn-secondary';
-}
-
-export interface MaintenancePlan {
-  readonly name: string;
-  readonly tagline: string;
-  readonly price: string;
-  readonly period: string;
-  /** Annual alternative — shown on the maintenance-plans page only. */
-  readonly annual: string;
-  readonly popular: boolean;
-  readonly cta: string;
-  readonly theme: PlanTheme;
-  /** Short feature list used by the homepage teaser. */
-  readonly homeFeatures: readonly string[];
-  /** Full feature list used by the maintenance-plans page. */
-  readonly features: readonly string[];
-}
-
-export interface ComparisonRow {
-  readonly feature: string;
-  readonly essential: string;
-  readonly comfort: string;
-  readonly totalCare: string;
-}
-
-export interface Perk {
-  readonly icon: IconName;
-  readonly title: string;
-  readonly body: string;
 }
 
 export interface FinanceBenefit {

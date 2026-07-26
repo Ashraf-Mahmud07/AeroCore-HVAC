@@ -24,7 +24,7 @@ export function Blog() {
           <div className={styles.headCopy}>
             <SectionHeading
               id="blog-heading"
-              kicker="10 — Field notes"
+              kicker="09 — Field notes"
               title="The HVAC playbook."
             />
           </div>

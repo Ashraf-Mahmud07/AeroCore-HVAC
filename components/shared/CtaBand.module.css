@@ -6,17 +6,11 @@
   align-items: center;
   justify-content: space-between;
   gap: 28px;
-}
-.surface {
   background: var(--color-surface);
-}
-.dark {
-  background: var(--color-accent-900);
-  color: var(--color-bg);
 }
 
 .copy {
-  max-width: var(--ac-cta-measure, 52ch);
+  max-width: 52ch;
 }
 .title {
   font-family: var(--font-heading);
@@ -32,9 +26,6 @@
   line-height: 1.6;
   margin: 0;
   color: color-mix(in srgb, var(--color-text) 80%, transparent);
-}
-.dark .body {
-  color: color-mix(in srgb, var(--color-bg) 78%, transparent);
 }
 
 .actions {

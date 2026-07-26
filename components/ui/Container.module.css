@@ -7,15 +7,9 @@
 .max1280 {
   --container-max: 1280px;
 }
-.max1180 {
-  --container-max: 1180px;
-}
 .max1080 {
   --container-max: 1080px;
 }
 .max900 {
   --container-max: 900px;
-}
-.max820 {
-  --container-max: 820px;
 }

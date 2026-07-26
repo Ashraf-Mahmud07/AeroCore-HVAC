@@ -9,15 +9,13 @@ import styles from './FaqAccordion.module.css';
 
 interface FaqAccordionProps {
   readonly faqs: readonly Faq[];
-  /** Trigger type scale — 19px on the homepage, 18px on the plans page. */
-  readonly triggerSize?: number;
 }
 
 /**
  * Single-open accordion, matching the source behaviour: the first item starts
  * open and clicking the open item closes it.
  */
-export function FaqAccordion({ faqs, triggerSize = 19 }: FaqAccordionProps) {
+export function FaqAccordion({ faqs }: FaqAccordionProps) {
   const baseId = useId();
   const [openIndex, setOpenIndex] = useState(0);
 
@@ -36,7 +34,6 @@ export function FaqAccordion({ faqs, triggerSize = 19 }: FaqAccordionProps) {
                 type="button"
                 id={triggerId}
                 className={styles.trigger}
-                style={{ ['--ac-faq-size' as string]: `${triggerSize}px` }}
                 aria-expanded={open}
                 aria-controls={panelId}
                 onClick={() => setOpenIndex(open ? -1 : index)}

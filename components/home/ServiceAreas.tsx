@@ -17,7 +17,7 @@ export function ServiceAreas() {
           <Reveal>
             <SectionHeading
               id="areas-heading"
-              kicker="09 — Coverage"
+              kicker="08 — Coverage"
               title="Serving the Bay Area & beyond."
               size={50}
               tone="dark"

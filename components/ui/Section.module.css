@@ -1,12 +1,9 @@
-/* Vertical rhythm — the three padding clamps used across the design components. */
+/* Vertical rhythm — the two padding clamps used across the design components. */
 .lg {
   padding: clamp(72px, 9vw, 128px) 0;
 }
 .md {
   padding: clamp(64px, 8vw, 110px) 0;
-}
-.sm {
-  padding: clamp(56px, 7vw, 96px) 0;
 }
 
 /* Tone — the three section backgrounds in the design. */
@@ -21,11 +18,5 @@
 /* Hairline separators. */
 .bordered {
   border-top: 1px solid var(--color-divider);
-  border-bottom: 1px solid var(--color-divider);
-}
-.borderedTop {
-  border-top: 1px solid var(--color-divider);
-}
-.borderedBottom {
   border-bottom: 1px solid var(--color-divider);
 }
